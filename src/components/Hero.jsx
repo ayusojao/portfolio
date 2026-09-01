@@ -19,7 +19,7 @@ export default function Hero() {
   const highlightWrapperRef = useRef(null);
 
   const frameCount = 1;
-  const currentFrame = () => `/images/person.jpg`;
+  const currentFrame = () => `${import.meta.env.BASE_URL}images/person.jpg`;
   
   const imagesRef = useRef([]);
   // We use an object to track the frame so GSAP can animate the value smoothly
