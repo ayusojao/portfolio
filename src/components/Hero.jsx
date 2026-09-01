@@ -88,7 +88,7 @@ export default function Hero() {
     // Initial Face Reveal
     bootTl.fromTo(canvas, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" }, 0.8);
     // Slowly play initial frames immediately
-    bootTl.to(seqRef.current, { frame: 10, snap: "frame", duration: 1.5, ease: "power1.inOut", onUpdate: render }, 0.8);
+    bootTl.to(seqRef.current, { frame: 0, snap: "frame", duration: 1.5, ease: "power1.inOut", onUpdate: render }, 0.8);
 
     // HUD Elements sequence
     bootTl.fromTo('.hud-element', { opacity: 0 }, { opacity: 1, duration: 0.1, stagger: 0.1, ease: "none" }, 1.2);
