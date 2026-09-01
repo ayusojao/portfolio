@@ -18,8 +18,8 @@ export default function Hero() {
   const subtitleWrapperRef = useRef(null);
   const highlightWrapperRef = useRef(null);
 
-  const frameCount = 240;
-  const currentFrame = (index) => `/images/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
+  const frameCount = 1;
+  const currentFrame = () => `/images/person.jpg`;
   
   const imagesRef = useRef([]);
   // We use an object to track the frame so GSAP can animate the value smoothly
@@ -208,7 +208,7 @@ export default function Hero() {
                     
                     {/* LEFT SIDE: Name and Role */}
                     <div className="w-full md:w-[35%] flex flex-col items-center md:items-start text-center md:text-left">
-                        {currentFrameIdx >= 100 && (
+                        {loaded && (
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -221,7 +221,7 @@ export default function Hero() {
                             </motion.div>
                         )}
                         
-                        {currentFrameIdx >= 150 && (
+                        {loaded && (
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ export default function Hero() {
 
                     {/* RIGHT SIDE: Description and Button */}
                     <div className="w-full md:w-[35%] flex flex-col items-center md:items-start text-center md:text-left mt-16 md:mt-0 md:pl-8">
-                        {currentFrameIdx >= 200 && (
+                        {loaded && (
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -247,10 +247,11 @@ export default function Hero() {
                             >
                                 <p className="text-gray-400 text-sm md:text-sm lg:text-base font-light tracking-wide leading-relaxed">
                                     Computer Science student passionate about programming, problem solving, and building useful digital experiences.
+                                </p>
                             </motion.div>
                         )}
 
-                        {currentFrameIdx >= 200 && (
+                        {loaded && (
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
